@@ -34,8 +34,8 @@ Gunakan format jawaban pendek, satuan informasi kecil, tanpa narasi panjang:
 - **V**alid API: API inti yang dipakai (`Plugins::*`, simbio)
 - **E**xisting reuse: komponen bawaan yang dipakai ulang
 - **M**inimal patch: file yang diubah + alasan singkat
-- **A**nti-overengineering: hal yang sengaja tidak ditambah
-- **N**ext check: verifikasi cepat (syntax/build/manual path)
+- **A**voided complexity: hal yang sengaja tidak ditambah
+- **N**ext validation: verifikasi cepat (syntax/build/manual path)
 
 ## Template Instruksi untuk AI Agent (RAG Chunk)
 
@@ -54,10 +54,10 @@ BATASAN WAJIB:
 - Patch sekecil mungkin.
 
 OUTPUT:
-1) Daftar file berubah
-2) Kode final
-3) Cara uji singkat
-4) Risiko/kompatibilitas
+1) Daftar file berubah (bullet list: path + ringkasan 1 baris)
+2) Kode final (hanya potongan relevan)
+3) Cara uji singkat (langkah bernomor)
+4) Risiko/kompatibilitas (maks 3 poin)
 ```
 
 ## Skeleton Minimal Plugin (Disarankan)
@@ -75,7 +75,7 @@ $plugins = Plugins::getInstance();
 
 // Hook contoh
 $plugins->register(Plugins::MEMBERSHIP_INIT, function () {
-    // logic minimal
+    // placeholder: validasi field wajib member (mis. email tidak kosong & format valid)
 });
 
 // Menu admin contoh
